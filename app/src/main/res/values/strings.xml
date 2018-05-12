@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Osfre</string>
+    <string name="escanear_codigo">Escanear codigo</string>
+    <string name="scan">Scan</string>
+    <string name="resume">resume</string>
+    <string name="pause">pause</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titleTextNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="NETWORK LOCATION"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/locationControllerNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/titleTextNetwork"
+            android:text="@string/resume"
+            android:onClick="toggleNetworkUpdates"/>
+
+        <TextView
+            android:id="@+id/longitudeTextNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/locationControllerNetwork"
+            android:text="longitude"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/longitudeValueNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/locationControllerNetwork"
+            android:layout_toRightOf="@id/longitudeTextNetwork"
+            android:text="0.0000"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/latitudeTextNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/longitudeTextNetwork"
+            android:text="latitude"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/latitudeValueNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/longitudeValueNetwork"
+            android:layout_toRightOf="@id/longitudeTextNetwork"
+            android:text="0.0000"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+</ScrollView>

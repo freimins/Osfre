@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1056095340601",
+    "firebase_url": "https://osfre-final.firebaseio.com",
+    "project_id": "osfre-final",
+    "storage_bucket": "osfre-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056095340601:android:f484f07b860728ee",
+        "android_client_info": {
+          "package_name": "com.freimins.osfre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056095340601-2srui57iqes6ssl061qhnr68a8hhdpuh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freimins.osfre",
+            "certificate_hash": "25465e25624f6e213dc3450b58df9c06605b1d1e"
+          }
+        },
+        {
+          "client_id": "1056095340601-irmoa02ktnbcp9makdr12r9jnhord8ud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8P9pAPRvZeR6iNuEx1tXa2onf_1PaxFE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056095340601-irmoa02ktnbcp9makdr12r9jnhord8ud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
