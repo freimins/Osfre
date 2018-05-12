@@ -4,4 +4,6 @@
     <string name="scan">Scan</string>
     <string name="resume">resume</string>
     <string name="pause">pause</string>
+    <string name="mostrar">mostrar</string>
+    <string name="mostar">mostrar</string>
 </resources>

@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
 public class Lugar extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE2 = 2;
@@ -34,11 +33,14 @@ public class Lugar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lugar);
+
+
+
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
 
-        longitudeValueNetwork = (TextView) findViewById(R.id.longitudeValueNetwork);
-        latitudeValueNetwork = (TextView) findViewById(R.id.latitudeValueNetwork);
+       // longitudeValueNetwork = (TextView) findViewById(R.id.longitudeValueNetwork);
+        //latitudeValueNetwork = (TextView) findViewById(R.id.latitudeValueNetwork);
 
 
 //-----------------------------------------PRMISOS---------------------------------
@@ -142,11 +144,10 @@ public class Lugar extends AppCompatActivity {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             }
             locationManager.removeUpdates(locationListenerNetwork);
-            button.setText(R.string.resume);
+            button.setText(R.string.mostrar);
         } else {
             locationManager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER, 10 * 1000, 10, locationListenerNetwork);
-            Toast.makeText(this, "Network provider started running", Toast.LENGTH_LONG).show();
             button.setText(R.string.pause);
         }
     }
@@ -160,9 +161,9 @@ public class Lugar extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    longitudeValueNetwork.setText(longitudeNetwork + "");
-                    latitudeValueNetwork.setText(latitudeNetwork + "");
-                    Toast.makeText(Lugar.this, "Network Provider update", Toast.LENGTH_SHORT).show();
+                    //longitudeValueNetwork.setText(longitudeNetwork + "");
+                    //latitudeValueNetwork.setText(latitudeNetwork + "");
+                    Toast.makeText(Lugar.this, "Usted esta en: longitud "+longitudeNetwork+" y latitud "+latitudeNetwork, Toast.LENGTH_SHORT).show();
                 }
             });
         }

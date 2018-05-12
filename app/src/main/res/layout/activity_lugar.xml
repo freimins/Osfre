@@ -24,10 +24,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/titleTextNetwork"
-            android:text="@string/resume"
+            android:text="@string/mostar"
             android:onClick="toggleNetworkUpdates"/>
 
-        <TextView
+       <!-- <TextView
             android:id="@+id/longitudeTextNetwork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             android:layout_below="@id/longitudeValueNetwork"
             android:layout_toRightOf="@id/longitudeTextNetwork"
             android:text="0.0000"
-            android:textSize="20sp"/>
+            android:textSize="20sp"/> -->
 
     </RelativeLayout>
 </ScrollView>
