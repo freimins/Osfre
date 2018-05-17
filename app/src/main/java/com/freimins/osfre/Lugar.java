@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -19,6 +20,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 
 public class Lugar extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
@@ -28,6 +33,8 @@ public class Lugar extends AppCompatActivity {
     double longitudeGPS, latitudeGPS;
     double longitudeNetwork, latitudeNetwork;
     TextView longitudeValueNetwork, latitudeValueNetwork;
+    private Geocoder geocoder;
+    private List<android.location.Address> addresses;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +83,14 @@ public class Lugar extends AppCompatActivity {
 
             }
         }
+
+
+        geocoder = new Geocoder(this, Locale.getDefault());
+
+        locationManager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER, 10 * 1000, 10, locationListenerNetwork);
+
+
     }
 
     @Override
@@ -102,7 +117,7 @@ public class Lugar extends AppCompatActivity {
             }
         }
     }
-//--------------------------------FIN PRMISOS-----------------------------------------
+//--------------------------------FIN PERMISOS-----------------------------------------
 
     private boolean checkLocation() {
         if (!isLocationEnabled())
@@ -157,15 +172,21 @@ public class Lugar extends AppCompatActivity {
         public void onLocationChanged(Location location) {
             longitudeNetwork = location.getLongitude();
             latitudeNetwork = location.getLatitude();
+            try {
+                addresses=geocoder.getFromLocation(latitudeNetwork,longitudeNetwork,1);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            final String address= addresses.get(0).getLocality();
 
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    //longitudeValueNetwork.setText(longitudeNetwork + "");
-                    //latitudeValueNetwork.setText(latitudeNetwork + "");
-                    Toast.makeText(Lugar.this, "Usted esta en: longitud "+longitudeNetwork+" y latitud "+latitudeNetwork, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Lugar.this, "Usted esta en "+ address, Toast.LENGTH_SHORT).show();
                 }
             });
+
+
         }
 
         @Override

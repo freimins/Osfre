@@ -11,18 +11,11 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        /*mGoogleApiClient = new GoogleApiClient
-                .Builder(this)
-                .enableAutoManage(this, 0, this)
-                .addApi(Places.GEO_DATA_API)
-                .addApi(Places.PLACE_DETECTION_API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();*/
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-            Intent intent= new Intent(SplashScreen.this, Lugar.class);
+            Intent intent= new Intent(SplashScreen.this, Codigogps.class);
             startActivity(intent);
             finish();
             }
@@ -30,18 +23,4 @@ public class SplashScreen extends AppCompatActivity {
     }
 
 
-   /* @Override
-    protected void onStart() {
-        super.onStart();
-        if( mGoogleApiClient != null )
-            mGoogleApiClient.connect();
-    }
-
-    @Override
-    protected void onStop() {
-        if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
-            mGoogleApiClient.disconnect();
-        }
-        super.onStop();
-    }*/
 }
